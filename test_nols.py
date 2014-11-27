@@ -11,16 +11,9 @@ from selenium.webdriver.chrome import service
 
 class DeCanon(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Firefox()
-	p = webdriver.DesiredCapabilities.OPERA.copy()  # capabilities[‘platform’] = “WINDOWS” 
-	c =  p
-	c['javascriptEnabled'] = False
-	fp = webdriver.FirefoxProfile()
-
+        fp = webdriver.FirefoxProfile()
 	fp.set_preference("browser.download.folderList",2)
 	fp.set_preference("javascript.enabled", False)
-
-	#~ browser = webdriver.Firefox(firefox_profile=fp)
 	self.driver = webdriver.Firefox(firefox_profile=fp)
 	self.driver.implicitly_wait(30)
         self.base_url = "http://sales-promotions/"
