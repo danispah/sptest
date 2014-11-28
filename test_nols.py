@@ -10,6 +10,7 @@ from selenium.webdriver.chrome import service
 
 
 class DeCanon(unittest.TestCase):
+    """this is test with png from Windows dir"""
     def setUp(self):
         fp = webdriver.FirefoxProfile()
 	fp.set_preference("browser.download.folderList",2)
